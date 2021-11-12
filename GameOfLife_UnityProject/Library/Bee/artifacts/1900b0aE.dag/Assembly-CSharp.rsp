@@ -318,8 +318,11 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
-"Assets/GameOfLife.cs"
-"Assets/GoLEditor.cs"
+"Assets/CameraManager.cs"
+"Assets/GOL_Gameobjects/GameOfLife.cs"
+"Assets/GOL_Gameobjects/GoLEditor.cs"
+"Assets/GOL_Gameobjects/GoLEditor1.cs"
+"Assets/GOL_Sprites/GameOfLife_Sprites.cs"
 -langversion:8.0
 
 /deterministic
