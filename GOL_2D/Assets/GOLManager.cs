@@ -26,21 +26,21 @@ public class GOLManager : MonoBehaviour
             yield return new WaitForSeconds(generationTime);
             Generation();
         }
-
-
     }
 
     private void Start()
     {
-
         Create();
-
         StartCoroutine(GOLUpdate());
-
     }
 
     public void Create()
     {
+
+        //less = 2;
+        //more = 3;
+        //live = 3;
+
         cellArray = new bool[rows, columns];
 
         for (int i = 0; i < rows; i++)
@@ -78,14 +78,27 @@ public class GOLManager : MonoBehaviour
                     map.SetTile(new Vector3Int(i, a, 0), black);
 
                 }
-
-
             }
         }
     }
 
+    public bool rand;
+
+    public void ChangeRandom(bool b)
+    {
+        rand = b;
+    }
+
     public void Generation()
     {
+
+        if (rand)
+        {
+            less = Random.Range(1, 6);
+            more = Random.Range(1, 6);
+            live = Random.Range(0, 6);
+        }
+
         bool[,] tempArray = new bool[rows, columns];
 
         for (int i = 0; i < rows; i++)
@@ -107,6 +120,20 @@ public class GOLManager : MonoBehaviour
     public int less = 2;
     public int more = 3;
     public int live = 3;
+
+
+    public void ChangeLess(float l)
+    {
+        less = (int)l;
+    }
+    public void ChangeMore(float l)
+    {
+        more = (int)l;
+    }
+    public void ChangeAlive(float l)
+    {
+        live = (int)l;
+    }
 
     bool ShouldaCellLive(bool isMainCellAlive, int countOfLivingCells)
     {
@@ -156,7 +183,7 @@ public class GOLManager : MonoBehaviour
 
                 if (i < 0)
                     newI = rows - 1;
-                
+
                 if (a < 0)
                     newA = columns - 1;
 
